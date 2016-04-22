@@ -1,0 +1,19 @@
+html {
+  /*background-color: rgb(187, 224, 227);*/
+}
+
+.view-content {
+  border: 1px solid black;
+}
+#content {
+  clear: right;
+}
+
+#description {
+  display: inline-block;
+}
+
+#UI-login {
+  float: right;
+  display: inline-block;
+}

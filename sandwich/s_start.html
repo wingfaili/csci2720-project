@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="/js/script.js"> </script>
+		<script src="/js/check10.js"></script>
+
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/js/materialize.min.js"></script>
+		<title>CSCI2720 Project</title>
+	</head>
+
+	<body>
+		<nav>
+			<div class="nav-wrapper">
+				<div id="logo"><a href="/" class="brand-logo" id="brand-logo">CSCI 2720 Project</a></div>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+	        <li><a href="/s_start">Add your new sandwich</a></li>
+	        <li><a href="/s_view">View your sandwich(es)</a></li>
+	      </ul>
+      	<ul class="side-nav" id="mobile-demo">
+					<li><a href="/s_start">Add sandwich</a></li>
+	        <li><a href="/s_view">View sandwich(es)</a></li>
+	      </ul>
+			</div>
+		</nav>
+		<form class="col s12" method="get" action="/logout">
+			<div class="row">
+				<div class="input-field col s6" style="margin-bottom: 0px">
+					<input disabled id="username" name=username type="text" class="validate">
+					<label for="username"></label>
+				</div>
+				<div class="input-field col s6" style="margin-bottom: 0px">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Logout<i class="material-icons right">send</i>  </button>
+				</div>
+			</div>
+		</form>
+		<!-- <div id="header">
+      <div id="description">
+        <H1>Create your own sandwich</H1>
+    	</div>
+      <div id="UI-login">
+        <form method="get" action="/logout">
+          <table>
+            <tr>
+              <td>
+                Username: <label>a</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+							&nbsp;
+              </td>
+            </tr>
+          </table>
+          <input type="submit" value="logout">
+        </form>
+      </div>
+    </div> -->
+
+    <div id="content">
+      <hr>
+			<div class="row">
+		    <form class="col s12" method="get" action="/s_submit">
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input placeholder="My New sandwich" name="sandwich" id="s_start_name" type="text" class="validate" required >
+		          <label for="s_start_name">sandwich Name</label>
+		        </div>
+		      </div>
+		      <div class="row">
+						<div class="input-field col s12">
+							<label>Bread: </label>
+							<p>
+					      <input name="bread" type="radio" id="b_1" value="b_1" checked required />
+					      <label for="b_1">Italian</label>
+					    </p>
+					    <p>
+					      <input name="bread" type="radio" id="b_2" value="b_2" />
+					      <label for="b_2">Wheat</label>
+					    </p>
+							<p>
+					      <input name="bread" type="radio" id="b_3" value="b_3" />
+					      <label for="b_3">Parmensan Oregano</label>
+					    </p>
+					    <p>
+					      <input name="bread" type="radio" id="b_4" value="b_4"/>
+					      <label for="b_4">Honey oat</label>
+					    </p>
+						</div>
+		      </div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label>Size: </label>
+							<p>
+					      <input name="size" type="radio" id="s_1" value="s_1" checked required />
+					      <label for="s_1">Half</label>
+					    </p>
+					    <p>
+					      <input name="size" type="radio" id="s_2" value="s_2"/>
+					      <label for="s_2">Whole</label>
+					    </p>
+						</div>
+					</div>
+					<div class="row">
+						<label>Vegetable: </label>
+						<p>
+					      <input type="checkbox" name="vegetable" id="c_1" value="c_1" checked/>
+					      <label for="c_1">Lettuce </label>
+						</p>
+						<img class="materialboxed" width="50" src="/images/lettuce.jpg">
+				    <p>
+				      <input type="checkbox" name="vegetable" id="c_2" value="c_2"/>
+				      <label for="c_2">Tomatoes</label>
+				    </p>
+						<img class="materialboxed" width="50" src="/images/tomatoes.jpg">
+						<p>
+							<input type="checkbox" name="vegetable" id="c_3" value="c_3"/>
+							<label for="c_3">Cucumbers</label>
+						</p>
+						<img class="materialboxed" width="50" src="/images/cucumbers.jpg">
+						<p>
+							<input type="checkbox" name="vegetable" id="c_4" value="c_4"/>
+							<label for="c_4">Pickles</label>
+						</p>
+						<img class="materialboxed" width="50" src="/images/pickles.jpg">
+						<p>
+				      <input type="checkbox" name="vegetable" id="c_5" value="c_5"/>
+				      <label for="c_5">Olives</label>
+				    </p>
+						<img class="materialboxed" width="50" src="/images/olives.jpg">
+						<p>
+				      <input type="checkbox" name="vegetable" id="c_6" value="c_6"/>
+				      <label for="c_6">Onions</label>
+				    </p>
+						<img class="materialboxed" width="50" src="/images/onions.jpg">
+					</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label>Meat: </label>
+							<p>
+					      <input type="checkbox" name="meat" id="m_1" value="m_1" checked/>
+					      <label for="m_1">Pickled Herring</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Pickled_Herring.jpg">
+					    <p>
+					      <input type="checkbox" name="meat" id="m_2" value="m_2"/>
+					      <label for="m_2">Rotisserie Chicken</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Rotisserie_Chicken.jpg">
+							<p>
+								<input type="checkbox" name="meat" id="m_3" value="m_3"/>
+								<label for="m_3">Roast Beef</label>
+							</p>
+							<img class="materialboxed" width="50" src="/images/Roast_Beef.jpg">
+							<p>
+								<input type="checkbox" name="meat" id="m_4" value="m_4"/>
+								<label for="m_4">Black Forest Ham</label>
+							</p>
+							<img class="materialboxed" width="50" src="/images/Black_Forest_Ham.jpg">
+							<p>
+								<input type="checkbox" name="meat" id="m_5" value="m_5"/>
+								<label for="m_5">Smoked Mackerel</label>
+							</p>
+							<img class="materialboxed" width="50" src="/images/Smoked_Mackerel.jpg">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label>Cheese: </label>
+							<p>
+					      <input type="checkbox" name="cheese" id="ch_1" value="ch_1" checked/>
+					      <label for="ch_1">Roquefort</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Roquefort.jpg">
+					    <p>
+					      <input type="checkbox" name="cheese" id="ch_2" value="ch_2"/>
+					      <label for="ch_2">Camembert</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Camembert.jpg">
+							<p>
+								<input type="checkbox" name="cheese" id="ch_3" value="ch_3"/>
+								<label for="ch_3">Cotija</label>
+							</p>
+							<img class="materialboxed" width="50" src="/images/Cotija.jpg">
+							<p>
+								<input type="checkbox" name="cheese" id="ch_4" value="ch_4"/>
+								<label for="ch_4">Cheddar</label>
+							</p>
+							<img class="materialboxed" width="50" src="/images/Cheddar.jpg">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label>Source: </label>
+							<p>
+					      <input name="source" type="radio" id="so_1" value="so_1" checked required />
+					      <label for="so_1">No Source</label>
+					    </p>
+							<p>
+								<input name="source" type="radio" id="so_2" value="so_2"/>
+								<label for="so_2">Dijon Mustard</label>
+							</p>
+							<img class="materialboxed" width="50" src="/images/Dijon_Mustard.png">
+					    <p>
+					      <input name="source" type="radio" id="so_3" value="so_3"/>
+					      <label for="so_3">Thousand Island dressing</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Thousand_Island_dressing.jpg">
+							<p>
+					      <input name="source" type="radio" id="so_4" value="so_4"/>
+					      <label for="so_4">Vinegar</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Vinegar.jpg">
+							<p>
+					      <input name="source" type="radio" id="so_5" value="so_5"/>
+					      <label for="so_5">Barbecue</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Barbecue.jpg">
+							<p>
+					      <input name="source" type="radio" id="so_6" value="so_6"/>
+					      <label for="so_6">Chipotle</label>
+					    </p>
+							<img class="materialboxed" width="50" src="/images/Chipotle.jpg">
+						</div>
+					</div>
+					<div class="row">
+	          <div class="input-field col s12">
+	            <textarea id="s_start_specInstr" name="comment" class="materialize-textarea" length="256" maxlength="256" placeholder="Enter special instruction here..."></textarea>
+	            <label for="s_start_specInstr">Special Instruction</label>
+	          </div>
+	        </div>
+					<button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+					<button class="btn waves-effect waves-light" type="reset" name="action">Reset<i class="material-icons right">replay</i></button>
+		    </form>
+		  </div>
+
+      <!-- <form method="get" action="/s_submit">
+        <table>
+          <tr>
+            <td>
+              Sandwich name:
+            </td>
+            <td>
+              <input type="text" id="s_start_name">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Bread:
+            </td>
+            <td>
+              <input type="radio" name="bread" value="A" checked>A
+            </td>
+            <td>
+              <input type="radio" name="bread" value="B">B
+            </td>
+            <td>
+              <input type="radio" name="bread" value="C">C
+            </td>
+            <td>
+              <input type="radio" name="bread" value="D">D
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Size:
+            </td>
+            <td>
+              <input type="radio" name="size" value="Half" checked>Half
+            </td>
+            <td>
+              <input type="radio" name="size" value="Whole">Whole
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vegetable:
+            </td>
+            <td>
+              <input type="checkbox" name="vegetable" value="1">c1
+              <input type="checkbox" name="vegetable" value="2">c2
+              <input type="checkbox" name="vegetable" value="3">c3
+              <input type="checkbox" name="vegetable" value="4">c4
+              <input type="checkbox" name="vegetable" value="5">c5
+              <input type="checkbox" name="vegetable" value="6">c6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Meat:
+            </td>
+            <td>
+              <input type="checkbox" name="meat" value="1">m1
+              <input type="checkbox" name="meat" value="2">m2
+              <input type="checkbox" name="meat" value="3">m3
+              <input type="checkbox" name="meat" value="4">m4
+              <input type="checkbox" name="meat" value="5">m5
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Cheese:
+            </td>
+            <td>
+              <input type="checkbox" name="cheese" value="1">c1
+              <input type="checkbox" name="cheese" value="2">c2
+              <input type="checkbox" name="cheese" value="3">c3
+              <input type="checkbox" name="cheese" value="4">c4
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Source:
+            </td>
+            <td>
+              <input type="checkbox" name="source" value="0">s0 No source
+              <input type="checkbox" name="source" value="1">s1
+              <input type="checkbox" name="source" value="2">s2
+            </td>
+          </tr>
+          <tr>
+            <td>
+               Special instruction:
+            </td>
+            <td>
+              <textarea id="s_start_specInstr" rows="4" cols="50" maxlength="256" placeholder="Enter special instruction here..."></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit">Submit</button>
+            </td>
+            <td>
+              <button type="reset">Reset</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div> -->
+	</body>
+</html>

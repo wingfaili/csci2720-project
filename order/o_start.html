@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="/js/script.js"> </script>
+		<script src="/js/listsandwich.js"></script>
+		<script src="/js/checkoneorder.js"></script>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/js/materialize.min.js"></script>
+		<title>CSCI2720 Project</title>
+	</head>
+
+	<body>
+		<nav>
+			<div class="nav-wrapper">
+				<div id="logo"><a href="/" class="brand-logo" id="brand-logo">CSCI 2720 Project</a></div>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+	        <li><a href="/o_start">Add your new order</a></li>
+	        <li><a href="/o_view">View your order</a></li>
+	      </ul>
+      	<ul class="side-nav" id="mobile-demo">
+					<li><a href="/o_start">Add order</a></li>
+	        <li><a href="/o_view">View order</a></li>
+	      </ul>
+			</div>
+		</nav>
+		<form class="col s12" method="get" action="/logout">
+			<div class="row">
+				<div class="input-field col s6" style="margin-bottom: 0px">
+					<input disabled id="username" name=username type="text" class="validate">
+					<label for="username"></label>
+				</div>
+				<div class="input-field col s6" style="margin-bottom: 0px">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Logout<i class="material-icons right">send</i>  </button>
+				</div>
+			</div>
+		</form>
+		<!-- <div id="header">
+      <div id="description">
+        <H1>Create your Order</H1>
+    	</div>
+      <div id="UI-login">
+        <form method="get" action="/logout">
+          <table>
+            <tr>
+              <td>
+                Username: <label>a</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+							&nbsp;
+              </td>
+            </tr>
+          </table>
+          <input type="submit" value="logout">
+        </form>
+      </div>
+    </div> -->
+    <div id="content">
+      <hr>
+      <form method="get" action="/o_submit">
+        <table class="highlight" id="sandwich_table">
+					<tr>
+						<th>
+							Select
+						</th>
+						<th>
+							Sandwich name
+						</th>
+						<th>
+							Quantity
+						</th>
+					</tr>
+					<!-- //// area of listing Sandwich -->
+					<!-- //// -->
+        </table>
+				<button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+				<button class="btn waves-effect waves-light" type="reset" name="action">Reset<i class="material-icons right">replay</i></button>
+      </form>
+    </div>
+	</body>
+</html>
